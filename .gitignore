@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+data/
+
+outputs/search_small/run_*/
+outputs/smoke_*/
+
+*.npz
+HW1_计算机视觉.pdf
+
+.DS_Store
+Thumbs.db
