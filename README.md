@@ -78,3 +78,8 @@ python search.py --output-root outputs/search --hidden-dims 128 256 512 --activa
 ## 说明
 
 首次运行时脚本会自动下载 `Fashion-MNIST` 原始 `gz` 文件到 `data/` 目录。
+
+## 链接
+
+- GitHub Repo: `https://github.com/jiab666/cvhw`
+- Best Model Weight: `https://github.com/jiab666/cvhw/blob/main/outputs/final_run/best_model.npz`

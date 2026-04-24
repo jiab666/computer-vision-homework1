@@ -160,8 +160,8 @@
 
 GitHub Repo 链接：
 
-- 待补充
+- https://github.com/jiab666/cvhw
 
 模型权重下载链接：
 
-- 待补充
+- https://github.com/jiab666/cvhw/blob/main/outputs/final_run/best_model.npz

@@ -9,6 +9,7 @@ outputs/search_small/run_*/
 outputs/smoke_*/
 
 *.npz
+!outputs/final_run/best_model.npz
 HW1_计算机视觉.pdf
 
 .DS_Store
