@@ -69,4 +69,4 @@ python search.py --output-root outputs/search_required --hidden-dims 128 256 --l
 ## 链接
 
 - GitHub Repo: `https://github.com/jiab666/computer-vision-homework1`
-- Best Model Weight: `https://raw.githubusercontent.com/jiab666/computer-vision-homework1/main/outputs/final_run/best_model.npz`
+- Best Model Weight: `https://drive.google.com/file/d/1a7Nlpp98e5WHCZiB-oYsXDpKoLbtTG7y/view?usp=drive_link`
