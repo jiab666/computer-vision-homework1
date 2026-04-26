@@ -56,8 +56,6 @@ python evaluate.py --checkpoint outputs/baseline/best_model.npz --output-dir out
 
 ## 超参数搜索
 
-下面这组命令更贴合作业要求，因为它显式搜索了学习率、隐藏层大小和正则化强度：
-
 ```bash
 python search.py --output-root outputs/search_required --hidden-dims 128 256 --learning-rates 0.05 0.01 --weight-decays 0.0 1e-4 --activations relu --epochs 8
 ```
