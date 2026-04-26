@@ -56,24 +56,13 @@ python evaluate.py --checkpoint outputs/baseline/best_model.npz --output-dir out
 
 ## 超参数搜索
 
+下面这组命令更贴合作业要求，因为它显式搜索了学习率、隐藏层大小和正则化强度：
+
 ```bash
-python search.py --output-root outputs/search --hidden-dims 128 256 512 --activations relu tanh --learning-rates 0.05 0.01 --weight-decays 0.0 1e-4
+python search.py --output-root outputs/search_required --hidden-dims 128 256 --learning-rates 0.05 0.01 --weight-decays 0.0 1e-4 --activations relu --epochs 8
 ```
 
-搜索结果会保存在 `outputs/search/search_results.json`。
-
-## 报告建议
-
-实验报告里建议包含以下内容：
-
-- 模型结构与自动微分实现思路
-- 数据预处理和训练设置
-- 训练集 / 验证集 `Loss` 曲线
-- 验证集 `Accuracy` 曲线
-- 不同超参数组合的结果对比
-- 第一层权重可视化分析
-- 测试集混淆矩阵分析
-- 错分样本分析
+搜索结果会保存在 `outputs/search_required/search_results.json`。
 
 ## 说明
 
@@ -81,5 +70,5 @@ python search.py --output-root outputs/search --hidden-dims 128 256 512 --activa
 
 ## 链接
 
-- GitHub Repo: `https://github.com/jiab666/cvhw`
-- Best Model Weight: `https://github.com/jiab666/cvhw/blob/main/outputs/final_run/best_model.npz`
+- GitHub Repo: `https://github.com/jiab666/computer-vision-homework1`
+- Best Model Weight: `https://raw.githubusercontent.com/jiab666/computer-vision-homework1/main/outputs/final_run/best_model.npz`

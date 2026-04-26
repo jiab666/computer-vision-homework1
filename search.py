@@ -15,12 +15,12 @@ def run_search(args: argparse.Namespace) -> None:
     results = []
     combinations = itertools.product(
         args.hidden_dims,
-        args.activations,
         args.learning_rates,
         args.weight_decays,
+        args.activations,
     )
 
-    for run_idx, (hidden_dim, activation, lr, weight_decay) in enumerate(combinations, start=1):
+    for run_idx, (hidden_dim, lr, weight_decay, activation) in enumerate(combinations, start=1):
         run_dir = output_root / f"run_{run_idx:02d}_hd{hidden_dim}_{activation}_lr{lr}_wd{weight_decay}"
         namespace = argparse.Namespace(
             data_dir=args.data_dir,
@@ -46,9 +46,9 @@ def run_search(args: argparse.Namespace) -> None:
             {
                 "run_dir": str(run_dir),
                 "hidden_dim": hidden_dim,
-                "activation": activation,
                 "lr": lr,
                 "weight_decay": weight_decay,
+                "activation": activation,
                 "best_val_acc": best_val_acc,
             }
         )
@@ -65,9 +65,9 @@ def build_argparser() -> argparse.ArgumentParser:
     parser.add_argument("--data-dir", type=str, default="data")
     parser.add_argument("--output-root", type=str, default="outputs/search")
     parser.add_argument("--hidden-dims", type=int, nargs="+", default=[128, 256])
-    parser.add_argument("--activations", type=str, nargs="+", default=["relu", "tanh"])
     parser.add_argument("--learning-rates", type=float, nargs="+", default=[0.05, 0.01])
     parser.add_argument("--weight-decays", type=float, nargs="+", default=[0.0, 1e-4])
+    parser.add_argument("--activations", type=str, nargs="+", default=["relu"])
     parser.add_argument("--epochs", type=int, default=15)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--eval-batch-size", type=int, default=512)

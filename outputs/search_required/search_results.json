@@ -1,0 +1,66 @@
+[
+  {
+    "run_dir": "outputs\\search_required\\run_05_hd256_relu_lr0.05_wd0.0",
+    "hidden_dim": 256,
+    "lr": 0.05,
+    "weight_decay": 0.0,
+    "activation": "relu",
+    "best_val_acc": 0.8928333333333334
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_06_hd256_relu_lr0.05_wd0.0001",
+    "hidden_dim": 256,
+    "lr": 0.05,
+    "weight_decay": 0.0001,
+    "activation": "relu",
+    "best_val_acc": 0.8923333333333333
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_02_hd128_relu_lr0.05_wd0.0001",
+    "hidden_dim": 128,
+    "lr": 0.05,
+    "weight_decay": 0.0001,
+    "activation": "relu",
+    "best_val_acc": 0.889
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_01_hd128_relu_lr0.05_wd0.0",
+    "hidden_dim": 128,
+    "lr": 0.05,
+    "weight_decay": 0.0,
+    "activation": "relu",
+    "best_val_acc": 0.8845
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_08_hd256_relu_lr0.01_wd0.0001",
+    "hidden_dim": 256,
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "activation": "relu",
+    "best_val_acc": 0.8743333333333333
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_07_hd256_relu_lr0.01_wd0.0",
+    "hidden_dim": 256,
+    "lr": 0.01,
+    "weight_decay": 0.0,
+    "activation": "relu",
+    "best_val_acc": 0.8735
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_04_hd128_relu_lr0.01_wd0.0001",
+    "hidden_dim": 128,
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "activation": "relu",
+    "best_val_acc": 0.8688333333333333
+  },
+  {
+    "run_dir": "outputs\\search_required\\run_03_hd128_relu_lr0.01_wd0.0",
+    "hidden_dim": 128,
+    "lr": 0.01,
+    "weight_decay": 0.0,
+    "activation": "relu",
+    "best_val_acc": 0.861
+  }
+]

@@ -79,26 +79,37 @@
 
 ## 6. 超参数搜索
 
-为了比较不同超参数组合对性能的影响，实验对隐藏层维度和激活函数进行了一个小规模网格搜索，其他参数固定为：
+为了比较不同超参数组合对性能的影响，实验采用网格搜索调节了以下三类核心超参数：
 
-- `learning_rate = 0.05`
-- `weight_decay = 1e-4`
-- `epochs = 8`
+- 隐藏层维度 `hidden_dim`
+- 学习率 `learning_rate`
+- 正则化强度 `weight_decay`
+
+为了控制实验规模，激活函数固定为 `ReLU`，训练轮数固定为 `8`。
 
 实验结果如下：
 
 | hidden_dim | activation | learning_rate | weight_decay | best_val_acc |
 | --- | --- | --- | --- | --- |
-| 256 | relu | 0.05 | 1e-4 | 0.8877 |
-| 256 | tanh | 0.05 | 1e-4 | 0.8868 |
-| 128 | relu | 0.05 | 1e-4 | 0.8860 |
-| 128 | tanh | 0.05 | 1e-4 | 0.8845 |
+| 256 | relu | 0.05 | 0.0 | 0.8928 |
+| 256 | relu | 0.05 | 1e-4 | 0.8923 |
+| 128 | relu | 0.05 | 1e-4 | 0.8890 |
+| 128 | relu | 0.05 | 0.0 | 0.8845 |
+| 256 | relu | 0.01 | 1e-4 | 0.8743 |
+| 256 | relu | 0.01 | 0.0 | 0.8735 |
+| 128 | relu | 0.01 | 1e-4 | 0.8688 |
+| 128 | relu | 0.01 | 0.0 | 0.8610 |
 
 从结果可以得到以下结论：
 
-- 较大的隐藏层维度通常带来更高的验证集准确率。
-- `ReLU` 整体略优于 `Tanh`，收敛速度也更快。
-- 在本次实验设置下，`hidden_dim = 256` 与 `ReLU` 的组合效果最好。
+- 较大的隐藏层维度通常带来更高的验证集准确率，说明更宽的隐藏层具备更强的表示能力。
+- 较大的学习率 `0.05` 明显优于 `0.01`，说明在当前模型和数据集上，更积极的更新步长能更快达到较好解。
+- `weight_decay = 0.0` 和 `1e-4` 的差距不大，但在不同隐藏层设置下都能观察到轻微影响，说明正则化强度也会改变模型表现。
+- 在本次搜索中，最佳组合为 `hidden_dim = 256`、`learning_rate = 0.05`、`weight_decay = 0.0`，验证集准确率达到 `0.8928`。
+
+搜索结果保存在：
+
+- `outputs/search_required/search_results.json`
 
 ## 7. 测试集结果
 
@@ -160,8 +171,8 @@
 
 GitHub Repo 链接：
 
-- https://github.com/jiab666/cvhw
+- https://github.com/jiab666/computer-vision-homework1
 
 模型权重下载链接：
 
-- https://github.com/jiab666/cvhw/blob/main/outputs/final_run/best_model.npz
+- https://raw.githubusercontent.com/jiab666/computer-vision-homework1/main/outputs/final_run/best_model.npz
